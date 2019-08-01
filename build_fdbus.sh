@@ -3,7 +3,7 @@ echo $DEP_PROTOBUF_PATH
 pwd
 DPP=protobuf_workspace/protobuf/build/install
 echo $PATH
-export PATH=$PATH:$DPP/bin
+export PATH=$PATH:`readlink -f $DPP/bin`
 echo after export ----
 echo $PATH
 
