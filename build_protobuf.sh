@@ -15,6 +15,8 @@ make -j4 install
 
 cd $DEP_PROTOBUF_PATH
 
+export PATH=$DEP_PROTOBUF_PATH/protobuf_workspace/protobuf/build/install/bin:PATH
+
 echo build done
 
 #check
