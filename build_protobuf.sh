@@ -3,17 +3,18 @@ PROTOBUF_WS=protobuf_workspace
 #record
 pwd
 
+
 #work
-mkdir $PROTOBUF_WS && push . && cd $PROTOBUF_WS
+mkdir $PROTOBUF_WS && pushd . && cd $PROTOBUF_WS
 git clone https://github.com/protocolbuffers/protobuf.git
-push . && cd protobuf && git submodule update --init --recursive
-mkdir -p build/install && push . && cd build
+pushd . && cd protobuf && git submodule update --init --recursive
+mkdir -p build/install && pushd . && cd build
 cmake -DCMAKE_INSTALL_PREFIX=install -DBUILD_SHARED_LIBS=1 ../cmake
 make -j4 install 
 ls -l install
-pop
-pop
-pop
+popd
+popd
+popd
 
 #check
 pwd
