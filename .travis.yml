@@ -1,3 +1,6 @@
+env:
+  - DEP_PROTOBUF_PATH=""
+
 language: cpp
 before_script: ./build_protobuf.sh
-#script: build_fdbus.sh
+script: ./build_fdbus.sh
