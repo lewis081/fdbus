@@ -5,6 +5,9 @@ Introduction
 
 .. image:: https://readthedocs.org/projects/fdbus/badge/?version=latest
 
+.. image:: https://travis-ci.org/lewis081/fdbus.svg?branch=master
+    :target: https://travis-ci.org/lewis081/fdbus
+
 ``FDBus`` is a middleware development framework targeting the following objectives:
 
 - Inter-Process Communication (``IPC``) within single host and cross the network
