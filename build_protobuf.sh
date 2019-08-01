@@ -2,25 +2,27 @@ PROTOBUF_WS=protobuf_workspace
 
 #record
 pwd
-
+DEP_PROTOBUF_PATH=$(cd "$(dirname $0)";pwd)
+echo $DEP_PROTOBUF_PATH
 
 #work
-mkdir $PROTOBUF_WS && pushd . && cd $PROTOBUF_WS
+mkdir $PROTOBUF_WS && cd $PROTOBUF_WS
 git clone https://github.com/protocolbuffers/protobuf.git
-pushd . && cd protobuf && git submodule update --init --recursive
-mkdir -p build/install && pushd . && cd build
+cd protobuf && git submodule update --init --recursive
+mkdir -p build/install && cd build
 cmake -DCMAKE_INSTALL_PREFIX=install -DBUILD_SHARED_LIBS=1 ../cmake
 make -j4 install 
-ls -l install
-popd
-popd
-popd
+
+cd $DEP_PROTOBUF_PATH
+
+echo build done
 
 #check
 pwd
 
-ls -l $PROTOBUF_WS/protobuf/build/install
+# ls -l $PROTOBUF_WS/protobuf/build/install
 
 #for building fdbus
-DEP_PROTOBUF_PATH=$PROTOBUF_WS/protobuf/build/install
+
+# DEP_PROTOBUF_PATH=$PROTOBUF_WS/protobuf/build/install
 
